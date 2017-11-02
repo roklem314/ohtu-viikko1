@@ -116,7 +116,7 @@ public class VarastoTest {
     }
     @Test
     public void varastostaYritetaanOttaaNegatiivista(){
-        assertEquals(0,varasto.otaVarastosta(-100), vertailuTarkkuus);
+        assertEquals(1,varasto.otaVarastosta(-100), vertailuTarkkuus);
     }
     @Test
     public void toStringTulostaaOikein(){
