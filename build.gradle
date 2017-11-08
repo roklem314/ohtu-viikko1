@@ -45,3 +45,8 @@ exclude: ['main/**'])
 })
 }
 }
+apply plugin: 'checkstyle'
+checkstyle {
+    configFile = file("${project.rootDir}/config/checkstyle/checkstyle.xml")
+    toolVersion = '6.9'
+}
