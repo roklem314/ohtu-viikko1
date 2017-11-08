@@ -23,7 +23,9 @@
 	<module name="CyclomaticComplexity">
    		 <property name="max" value="3"/>	
 		</module>
-	<module name="MagicNumber"/>
-	
+	<module name="MagicNumber">
+		<property name="tokens" value="NUM_DOUBLE, NUM_FLOAT"/>
+		<property name="ignoreNumbers" value="-1, 0, 0.0001, 1"/>		
+		</module>
 	</module>
 </module>

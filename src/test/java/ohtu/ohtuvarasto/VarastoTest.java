@@ -64,63 +64,74 @@ public class VarastoTest {
         // varastossa pitäisi olla tilaa 10 - 8 + 2 eli 4
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
+
     @Test
-    public void laitetaanliikaaTavaraa(){
+    public void laitetaanliikaaTavaraa() {
         varasto.lisaaVarastoon(10);
         varasto.lisaaVarastoon(1);
-            assertEquals(10,varasto.getSaldo(),vertailuTarkkuus);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
     }
+
     @Test
-    public void otetaanLiikaaTavaraa(){
+    public void otetaanLiikaaTavaraa() {
         varasto.lisaaVarastoon(10);
-      
-        assertEquals(10,varasto.otaVarastosta(11),vertailuTarkkuus);
+
+        assertEquals(10, varasto.otaVarastosta(11), vertailuTarkkuus);
     }
+
     @Test
-    public void tyhjaanVarastoonEiVoiLisata(){
+    public void tyhjaanVarastoonEiVoiLisata() {
         Varasto tyhjavarasto = new Varasto(0);
         tyhjavarasto.lisaaVarastoon(10);
-        assertEquals(0,tyhjavarasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(0, tyhjavarasto.getSaldo(), vertailuTarkkuus);
     }
+
     @Test
-    public void tyhjaanVarastoonEiVoiOttaaTavaraa(){
+    public void tyhjaanVarastoonEiVoiOttaaTavaraa() {
         Varasto tyhjavarasto = new Varasto(0);
-        assertEquals(0,tyhjavarasto.otaVarastosta(10), vertailuTarkkuus);
+        assertEquals(0, tyhjavarasto.otaVarastosta(10), vertailuTarkkuus);
     }
+
     @Test
-    public void alustetaanVarastoSaldolla(){
-        Varasto varasto2 = new Varasto(10,4);
-        assertEquals(4,varasto2.getSaldo(),vertailuTarkkuus);
-        assertEquals(10,varasto2.getTilavuus(), vertailuTarkkuus);
+    public void alustetaanVarastoSaldolla() {
+        Varasto varasto2 = new Varasto(10, 4);
+        assertEquals(4, varasto2.getSaldo(), vertailuTarkkuus);
+        assertEquals(10, varasto2.getTilavuus(), vertailuTarkkuus);
     }
+
     @Test
-    public void lisaaNegatiivistaVarastoon(){
+    public void lisaaNegatiivistaVarastoon() {
         varasto.lisaaVarastoon(-1);
-        assertEquals(10,varasto.getTilavuus(), vertailuTarkkuus);
+        assertEquals(10, varasto.getTilavuus(), vertailuTarkkuus);
     }
+
     @Test
-    public void varastoYritetaanAlustaaNegatiivisellaTilavuudella(){
+    public void varastoYritetaanAlustaaNegatiivisellaTilavuudella() {
         Varasto uusivarasto = new Varasto(-1);
-        assertEquals(0,uusivarasto.getTilavuus(),vertailuTarkkuus);
+        assertEquals(0, uusivarasto.getTilavuus(), vertailuTarkkuus);
     }
+
     @Test
-    public void varastoYritetaanAlustaaNegatiivisellaTilavuudellaJaNegatiivisellaSaldolla(){
-        Varasto uusivarasto = new Varasto(-1,-1);
-        assertEquals(0,uusivarasto.getTilavuus(),vertailuTarkkuus);
-        assertEquals(0,uusivarasto.getSaldo(), vertailuTarkkuus);
+    public void varastoYritetaanAlustaaNegatiivisellaTilavuudellaJaNegatiivisellaSaldolla() {
+        Varasto uusivarasto = new Varasto(-1, -1);
+        assertEquals(0, uusivarasto.getTilavuus(), vertailuTarkkuus);
+        assertEquals(0, uusivarasto.getSaldo(), vertailuTarkkuus);
     }
+
     @Test
-    public void varastoYritetaanAlustaaLiianSuurellaSaldolla(){
-        Varasto uusivarasto = new Varasto(10,11);
-        assertEquals(10,uusivarasto.getSaldo(), vertailuTarkkuus);
+    public void varastoYritetaanAlustaaLiianSuurellaSaldolla() {
+        Varasto uusivarasto = new Varasto(10, 11);
+        assertEquals(10, uusivarasto.getSaldo(), vertailuTarkkuus);
     }
+
     @Test
-    public void varastostaYritetaanOttaaNegatiivista(){
-        assertEquals(0,varasto.otaVarastosta(-100), vertailuTarkkuus);
+    public void varastostaYritetaanOttaaNegatiivista() {
+        assertEquals(0, varasto.otaVarastosta(-100), vertailuTarkkuus);
     }
+
     @Test
-    public void toStringTulostaaOikein(){
-        assertEquals("saldo = "+ varasto.getSaldo()+", vielä tilaa "+ varasto.paljonkoMahtuu(), varasto.toString());
+    public void toStringTulostaaOikein() {
+        assertEquals("saldo = " + varasto.getSaldo() + ", vielä tilaa " + varasto.paljonkoMahtuu(), varasto.toString());
     }
 
 }
