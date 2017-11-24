@@ -2,4 +2,8 @@
 .build
 /.nb-gradle/
 /build/
+<<<<<<< HEAD
 .DS_Store
+=======
+*.DS_Store
+>>>>>>> acd3b50774055e9106a2b3e2195d734c35f86617
