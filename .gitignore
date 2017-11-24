@@ -2,3 +2,4 @@
 .build
 /.nb-gradle/
 /build/
+.DS_Store
